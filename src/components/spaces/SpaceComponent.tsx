@@ -6,14 +6,14 @@ interface SpaceComponentProps {
   spaceId: string;
   name: string;
   location: string;
-  photoUrl?: string;
+  photoURL?: string;
   reserveSpace: (spaceId: string) => void;
 }
 
 export class Spacecomponent extends Component<SpaceComponentProps> {
   private renderImage() {
-    return this.props.photoUrl ? (
-      <img src={this.props.photoUrl} alt="" />
+    return this.props.photoURL ? (
+      <img src={this.props.photoURL} alt="" />
     ) : (
       <img src={genericImage} alt="" />
     );
