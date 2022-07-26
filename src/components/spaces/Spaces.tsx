@@ -3,6 +3,7 @@ import { Space } from '../../model/Model';
 import { DataService } from '../../services/DataService';
 import { Spacecomponent } from './SpaceComponent';
 import { ConfirmModal } from './ConfirmModalComponent';
+import { Link } from 'react-router-dom';
 
 interface SpacesState {
   spaces: Space[];
@@ -58,6 +59,7 @@ export class Spaces extends Component<SpacesProps, SpacesState> {
           location={space.location}
           name={space.name}
           key={space.spaceId}
+          photoURL={space.photoURL}
           spaceId={space.spaceId}
           reserveSpace={this.reserveSpace}
         />
@@ -74,6 +76,8 @@ export class Spaces extends Component<SpacesProps, SpacesState> {
     return (
       <div>
         <h2>Welcome to the space page!</h2>
+        <Link to="/create-space">Create space</Link>
+        <br />
         {this.renderSpaces()}
         <ConfirmModal
           close={this.closeModal}
